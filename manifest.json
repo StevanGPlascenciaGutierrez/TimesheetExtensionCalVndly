@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "AutoTimesheet",
+    "description": "Move time from Calamri to Vndly",
+    "version": "1.0",
+    "background":{
+        "service_worker":"move.js"
+    },
+    "content_scripts":[
+        {"js":["main.js"],"matches":["<all_urls>"]},
+        {"js":["sub.js"], "matches":["<all_urls>"], "all_frames":true}
+    ],
+    "action": {
+      "default_popup": "action.html",
+      "default_icon": "ATIcon.png"
+    },
+    "permissions":["activeTab"]
+  }
